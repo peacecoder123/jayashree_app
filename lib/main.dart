@@ -7,6 +7,11 @@ import 'providers/app_data_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  // Note: The browser console may show "Intl.v8BreakIterator is deprecated.
+  // Please use Intl.Segmenter instead." This is a known non-blocking warning
+  // originating from the browser's JS runtime (used by the `intl` Dart package
+  // on web). No code change is required; it will resolve when the browser and
+  // SDK update their internal implementations.
   runApp(const JayshreeFoundationRoot());
 }
 
