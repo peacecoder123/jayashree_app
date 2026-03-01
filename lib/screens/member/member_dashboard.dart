@@ -103,7 +103,7 @@ class _MemberDashboardState extends State<MemberDashboard> {
       ),
       body: IndexedStack(
         index: _currentIndex,
-        children: _screens,
+        children: _screens.map((screen) => SizedBox.expand(child: screen)).toList(),
       ),
     );
   }

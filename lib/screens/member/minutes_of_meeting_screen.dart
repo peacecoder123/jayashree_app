@@ -154,9 +154,7 @@ class MemberMinutesOfMeetingScreen extends StatelessWidget {
     final upcoming = data.upcomingMeetings;
     final past = data.pastMeetings;
 
-    return Scaffold(
-      backgroundColor: AppColors.darkBackground,
-      body: CustomScrollView(
+    return CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
             child: Padding(
@@ -328,8 +326,7 @@ class MemberMinutesOfMeetingScreen extends StatelessWidget {
                 ),
               ),
             ),
-        ],
-      ),
+          ],
     );
   }
 }

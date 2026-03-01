@@ -152,14 +152,17 @@ class _MembersTabState extends State<MembersTab> {
 
           // ── List ───────────────────────────────────────────────────────────
           members.isEmpty
-              ? const SliverFillRemaining(
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.search_off, color: AppColors.darkTextHint, size: 48),
-                        SizedBox(height: 12),
-                      ],
+              ? SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 60),
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(Icons.search_off, color: AppColors.darkTextHint, size: 48),
+                          SizedBox(height: 12),
+                        ],
+                      ),
                     ),
                   ),
                 )

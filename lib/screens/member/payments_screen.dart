@@ -14,10 +14,8 @@ class MemberPaymentsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.darkBackground,
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -92,7 +90,6 @@ class MemberPaymentsScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
     );
   }
 }
