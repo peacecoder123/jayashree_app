@@ -67,6 +67,8 @@ class _LandingPageState extends State<LandingPage>
 
   // ─── App Bar ─────────────────────────────────────────────────────────────
   Widget _buildAppBar(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final titleFontSize = screenWidth < 400 ? 16.0 : 20.0;
     return Container(
       color: const Color(0xFF0F0F1E),
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
@@ -82,28 +84,33 @@ class _LandingPageState extends State<LandingPage>
             child: const Icon(Icons.favorite, color: Colors.white, size: 22),
           ),
           const SizedBox(width: 12),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Jayshree Foundation',
-                style: GoogleFonts.poppins(
-                  color: AppColors.primaryTeal,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
+          Flexible(
+            flex: 1,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Jayshree Foundation',
+                  overflow: TextOverflow.ellipsis,
+                  style: GoogleFonts.poppins(
+                    color: AppColors.primaryTeal,
+                    fontSize: titleFontSize,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
-              ),
-              Text(
-                'NGO Management',
-                style: GoogleFonts.poppins(
-                  color: AppColors.darkTextSecondary,
-                  fontSize: 10,
-                  fontWeight: FontWeight.w400,
+                Text(
+                  'NGO Management',
+                  overflow: TextOverflow.ellipsis,
+                  style: GoogleFonts.poppins(
+                    color: AppColors.darkTextSecondary,
+                    fontSize: 10,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-          const Spacer(),
+          const SizedBox(width: 8),
           TextButton(
             onPressed: () => context.go(AppRoutes.login),
             style: TextButton.styleFrom(
@@ -126,12 +133,28 @@ class _LandingPageState extends State<LandingPage>
 
   // ─── Hero Section ─────────────────────────────────────────────────────────
   Widget _buildHeroSection(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final double titleSize;
+    final double subtitleSize;
+    final double bodySize;
+    if (screenWidth < 400) {
+      titleSize = 28;
+      subtitleSize = 24;
+      bodySize = 13;
+    } else if (screenWidth < 600) {
+      titleSize = 34;
+      subtitleSize = 30;
+      bodySize = 14;
+    } else {
+      titleSize = 42;
+      subtitleSize = 38;
+      bodySize = 15;
+    }
     return AnimatedBuilder(
       animation: _gradientController,
       builder: (context, child) {
         final t = _gradientController.value;
         return Container(
-          height: 420,
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topLeft,
@@ -175,7 +198,7 @@ class _LandingPageState extends State<LandingPage>
                 'Jayshree Foundation',
                 style: GoogleFonts.poppins(
                   color: Colors.white,
-                  fontSize: 42,
+                  fontSize: titleSize,
                   fontWeight: FontWeight.w800,
                   height: 1.1,
                 ),
@@ -184,7 +207,7 @@ class _LandingPageState extends State<LandingPage>
                 'NGO Management',
                 style: GoogleFonts.poppins(
                   color: AppColors.primaryTeal,
-                  fontSize: 38,
+                  fontSize: subtitleSize,
                   fontWeight: FontWeight.w700,
                   height: 1.1,
                 ),
@@ -194,13 +217,14 @@ class _LandingPageState extends State<LandingPage>
                 'Empowering communities, connecting volunteers,\nand transforming lives through organized action.',
                 style: GoogleFonts.poppins(
                   color: AppColors.darkTextSecondary,
-                  fontSize: 15,
+                  fontSize: bodySize,
                   height: 1.6,
                 ),
               ),
               const SizedBox(height: 32),
               Wrap(
                 spacing: 20,
+                runSpacing: 12,
                 children: [
                   _buildHeroStat('500+', 'Volunteers'),
                   _buildHeroStat('₹12L+', 'Donations'),
