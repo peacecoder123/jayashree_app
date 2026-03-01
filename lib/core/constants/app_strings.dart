@@ -1,7 +1,7 @@
 class AppStrings {
   AppStrings._();
 
-  static const String appName = 'HopeConnect';
+  static const String appName = 'Jayshree Foundation';
   static const String tagline = 'Connecting Hearts, Changing Lives';
   static const String appVersion = '1.0.0';
 
@@ -13,7 +13,7 @@ class AppStrings {
   static const String forgotPassword = 'Forgot Password?';
   static const String loginButton = 'Sign In';
   static const String welcomeBack = 'Welcome Back';
-  static const String loginSubtitle = 'Sign in to your HopeConnect account';
+  static const String loginSubtitle = 'Sign in to your Jayshree Foundation account';
 
   // Navigation
   static const String dashboard = 'Dashboard';

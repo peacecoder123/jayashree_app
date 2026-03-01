@@ -167,7 +167,7 @@ class MemberHospitalMouScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          'A Memorandum of Understanding (MOU) is a formal agreement between HopeConnect and hospitals to provide medical assistance. Submit your request with patient details and our team will process it with the respective hospital.',
+                          'A Memorandum of Understanding (MOU) is a formal agreement between Jayshree Foundation and hospitals to provide medical assistance. Submit your request with patient details and our team will process it with the respective hospital.',
                           style: GoogleFonts.poppins(
                               color: AppColors.darkTextSecondary,
                               fontSize: 12,

@@ -51,7 +51,7 @@ class MemberCertificateScreen extends StatelessWidget {
                                     fontWeight: FontWeight.w700)),
                             const SizedBox(height: 4),
                             Text(
-                              'Request official certificates from HopeConnect',
+                              'Request official certificates from Jayshree Foundation',
                               style: GoogleFonts.poppins(
                                   color:
                                       AppColors.darkTextSecondary,

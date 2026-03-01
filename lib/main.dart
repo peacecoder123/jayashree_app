@@ -7,11 +7,11 @@ import 'providers/app_data_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const HopeConnectRoot());
+  runApp(const JayshreeFoundationRoot());
 }
 
-class HopeConnectRoot extends StatelessWidget {
-  const HopeConnectRoot({super.key});
+class JayshreeFoundationRoot extends StatelessWidget {
+  const JayshreeFoundationRoot({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class HopeConnectRoot extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => AppDataProvider()),
         ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
-      child: const HopeConnectApp(),
+      child: const JayshreeFoundationApp(),
     );
   }
 }

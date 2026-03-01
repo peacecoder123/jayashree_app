@@ -80,7 +80,7 @@ class AppSidebar extends StatelessWidget {
               ),
               const SizedBox(width: 10),
               Text(
-                'HopeConnect',
+                'Jayshree Foundation',
                 style: GoogleFonts.poppins(
                   color: AppColors.primaryTeal,
                   fontSize: 16,

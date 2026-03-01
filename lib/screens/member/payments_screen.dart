@@ -379,8 +379,8 @@ class _PaymentDialogState extends State<_PaymentDialog> {
                 ),
                 child: Text(
                   _paymentMode == 'Cash'
-                      ? 'Please pay the amount in cash at the HopeConnect office and submit this form.'
-                      : 'Please make the cheque payable to "HopeConnect NGO" and submit at the office.',
+                      ? 'Please pay the amount in cash at the Jayshree Foundation office and submit this form.'
+                      : 'Please make the cheque payable to "Jayshree Foundation NGO" and submit at the office.',
                   style: GoogleFonts.poppins(
                       color: AppColors.darkTextSecondary,
                       fontSize: 12,

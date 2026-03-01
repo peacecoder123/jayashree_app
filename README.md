@@ -1,6 +1,6 @@
-# HopeConnect 🌟
+# Jayshree Foundation 🌟
 
-**HopeConnect** – *Connecting Hearts, Changing Lives*
+**Jayshree Foundation** – *Connecting Hearts, Changing Lives*
 
 A production-quality Flutter application for NGO volunteer management, built for Indian non-profit organisations.
 
@@ -8,7 +8,7 @@ A production-quality Flutter application for NGO volunteer management, built for
 
 ## About
 
-HopeConnect is a comprehensive mobile platform that empowers NGOs to:
+Jayshree Foundation is a comprehensive mobile platform that empowers NGOs to:
 
 - **Manage Volunteers & Members** – Role-based access for Super Admin, Admin, Member, and Volunteer tiers
 - **Track Tasks** – Assign, monitor, and approve field tasks with optional photo-proof uploads
@@ -96,20 +96,20 @@ flutter build apk --release
 
 | Role | Email | Password |
 |------|-------|----------|
-| Super Admin | superadmin@hopeconnect.org | any 6+ chars |
-| Admin | admin@hopeconnect.org | any 6+ chars |
-| Admin | vikram@hopeconnect.org | any 6+ chars |
-| Member | anjali@hopeconnect.org | any 6+ chars |
-| Volunteer | amit@hopeconnect.org | any 6+ chars |
+| Super Admin | superadmin@jayshreefoundation.org | any 6+ chars |
+| Admin | admin@jayshreefoundation.org | any 6+ chars |
+| Admin | vikram@jayshreefoundation.org | any 6+ chars |
+| Member | anjali@jayshreefoundation.org | any 6+ chars |
+| Volunteer | amit@jayshreefoundation.org | any 6+ chars |
 
 ---
 
 ## Themes
 
-HopeConnect ships with a **dark theme** (default) and a **light theme**, both using the Poppins typeface and the brand teal accent (`#00BFA6`).
+Jayshree Foundation ships with a **dark theme** (default) and a **light theme**, both using the Poppins typeface and the brand teal accent (`#00BFA6`).
 
 ---
 
 ## Licence
 
-© 2025 HopeConnect. All rights reserved.
+© 2025 Jayshree Foundation. All rights reserved.

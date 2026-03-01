@@ -86,7 +86,7 @@ class _LandingPageState extends State<LandingPage>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'HopeConnect',
+                'Jayshree Foundation',
                 style: GoogleFonts.poppins(
                   color: AppColors.primaryTeal,
                   fontSize: 20,
@@ -172,7 +172,7 @@ class _LandingPageState extends State<LandingPage>
               ),
               const SizedBox(height: 20),
               Text(
-                'HopeConnect',
+                'Jayshree Foundation',
                 style: GoogleFonts.poppins(
                   color: Colors.white,
                   fontSize: 42,
@@ -485,7 +485,7 @@ class _LandingPageState extends State<LandingPage>
   Widget _buildNewsSection(BuildContext context) {
     final news = [
       _NewsData(
-        title: 'HopeConnect Reaches 500 Volunteer Milestone',
+        title: 'Jayshree Foundation Reaches 500 Volunteer Milestone',
         summary: 'We are proud to announce that our volunteer network has grown to 500 active members, making us one of the largest NGO volunteer networks in the region.',
         date: 'Jan 15, 2025',
         icon: Icons.people,
@@ -500,7 +500,7 @@ class _LandingPageState extends State<LandingPage>
       ),
       _NewsData(
         title: 'New Partnership with City Food Bank',
-        summary: 'HopeConnect has partnered with the City Food Bank to expand our food distribution program, ensuring no family goes hungry in our community.',
+        summary: 'Jayshree Foundation has partnered with the City Food Bank to expand our food distribution program, ensuring no family goes hungry in our community.',
         date: 'Nov 30, 2024',
         icon: Icons.handshake,
         color: AppColors.secondaryOrange,
@@ -613,7 +613,7 @@ class _LandingPageState extends State<LandingPage>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'HopeConnect NGO',
+                  'Jayshree Foundation NGO',
                   style: GoogleFonts.poppins(
                     color: AppColors.primaryTeal,
                     fontSize: 20,
@@ -622,7 +622,7 @@ class _LandingPageState extends State<LandingPage>
                 ),
                 const SizedBox(height: 12),
                 Text(
-                  'Founded in 2018, HopeConnect is a registered NGO dedicated to empowering underprivileged communities through education, healthcare, nutrition, and livelihood programs.',
+                  'Founded in 2018, Jayshree Foundation is a registered NGO dedicated to empowering underprivileged communities through education, healthcare, nutrition, and livelihood programs.',
                   style: GoogleFonts.poppins(
                     color: AppColors.darkTextSecondary,
                     fontSize: 14,
@@ -699,7 +699,7 @@ class _LandingPageState extends State<LandingPage>
               '+91 98765 43210'),
           const SizedBox(height: 16),
           _buildContactItem(Icons.email, 'Email',
-              'contact@hopeconnect.org'),
+              'contact@jayshreefoundation.org'),
           const SizedBox(height: 24),
           SizedBox(
             width: double.infinity,
@@ -781,7 +781,7 @@ class _LandingPageState extends State<LandingPage>
               const Icon(Icons.favorite, color: AppColors.primaryTeal, size: 16),
               const SizedBox(width: 8),
               Text(
-                'HopeConnect',
+                'Jayshree Foundation',
                 style: GoogleFonts.poppins(
                   color: AppColors.primaryTeal,
                   fontSize: 16,
@@ -802,7 +802,7 @@ class _LandingPageState extends State<LandingPage>
           const Divider(color: AppColors.darkDivider),
           const SizedBox(height: 12),
           Text(
-            '© ${DateTime.now().year} HopeConnect NGO. All rights reserved.',
+            '© ${DateTime.now().year} Jayshree Foundation NGO. All rights reserved.',
             style: GoogleFonts.poppins(
               color: AppColors.darkTextHint,
               fontSize: 11,
