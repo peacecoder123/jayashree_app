@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../providers/auth_provider.dart';
+import '../../screens/public/landing_page.dart';
+import '../../screens/auth/login_screen.dart';
 
 // ─── Placeholder screens (replace with real screens as you build them) ───────
 class _Placeholder extends StatelessWidget {
@@ -18,6 +20,7 @@ class _Placeholder extends StatelessWidget {
 class AppRoutes {
   AppRoutes._();
 
+  static const String landing = '/';
   static const String login = '/login';
   static const String dashboard = '/dashboard';
   static const String tasks = '/tasks';
@@ -38,21 +41,31 @@ class AppRoutes {
 // live ChangeNotifier instance and is notified on every auth state change.
 GoRouter createRouter(AuthProvider authProvider) {
   return GoRouter(
-    initialLocation: AppRoutes.login,
+    initialLocation: AppRoutes.landing,
     refreshListenable: authProvider,
     redirect: (context, state) {
       final isLoggedIn = authProvider.isAuthenticated;
-      final goingToLogin = state.matchedLocation == AppRoutes.login;
+      final location = state.matchedLocation;
+      final publicPaths = [AppRoutes.landing, AppRoutes.login];
 
-      if (!isLoggedIn && !goingToLogin) return AppRoutes.login;
-      if (isLoggedIn && goingToLogin) return AppRoutes.dashboard;
+      if (!isLoggedIn && !publicPaths.contains(location)) {
+        return AppRoutes.login;
+      }
+      if (isLoggedIn && location == AppRoutes.login) {
+        return AppRoutes.dashboard;
+      }
       return null;
     },
     routes: [
       GoRoute(
+        path: AppRoutes.landing,
+        name: 'landing',
+        builder: (context, state) => const LandingPage(),
+      ),
+      GoRoute(
         path: AppRoutes.login,
         name: 'login',
-        builder: (context, state) => const _Placeholder('Login'),
+        builder: (context, state) => const LoginScreen(),
       ),
       ShellRoute(
         builder: (context, state, child) => child,
