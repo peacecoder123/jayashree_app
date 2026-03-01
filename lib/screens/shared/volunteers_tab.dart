@@ -104,7 +104,12 @@ class _VolunteersTabState extends State<VolunteersTab> {
 
           // ── List ──────────────────────────────────────────────────────────
           volunteers.isEmpty
-              ? const SliverFillRemaining(child: _EmptyState(message: 'No volunteers found'))
+              ? const SliverToBoxAdapter(
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 60),
+                    child: _EmptyState(message: 'No volunteers found'),
+                  ),
+                )
               : SliverPadding(
                   padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
                   sliver: SliverList(

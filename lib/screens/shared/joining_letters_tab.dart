@@ -107,11 +107,14 @@ class _JoiningLettersTabState extends State<JoiningLettersTab> {
 
         // ── List ──────────────────────────────────────────────────────────────
         filtered.isEmpty
-            ? SliverFillRemaining(
-                child: Center(
-                  child: Text(
-                    'No joining letters found',
-                    style: GoogleFonts.poppins(color: AppColors.darkTextSecondary),
+            ? SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 60),
+                  child: Center(
+                    child: Text(
+                      'No joining letters found',
+                      style: GoogleFonts.poppins(color: AppColors.darkTextSecondary),
+                    ),
                   ),
                 ),
               )

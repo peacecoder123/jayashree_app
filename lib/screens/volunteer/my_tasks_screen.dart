@@ -149,14 +149,12 @@ class _VolunteerMyTasksScreenState
 
     final filtered = _filtered(userTasks);
 
-    return Scaffold(
-      backgroundColor: AppColors.darkBackground,
-      body: RefreshIndicator(
-        color: AppColors.primaryTeal,
-        backgroundColor: AppColors.darkCard,
-        onRefresh: () async =>
-            await Future.delayed(const Duration(seconds: 1)),
-        child: CustomScrollView(
+    return RefreshIndicator(
+      color: AppColors.primaryTeal,
+      backgroundColor: AppColors.darkCard,
+      onRefresh: () async =>
+          await Future.delayed(const Duration(seconds: 1)),
+      child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
               child: Padding(
@@ -193,11 +191,14 @@ class _VolunteerMyTasksScreenState
               ),
             ),
             if (filtered.isEmpty)
-              SliverFillRemaining(
-                child: _EmptyState(
-                    message: _filterIndex == 0
-                        ? 'No tasks assigned yet'
-                        : 'No ${_tabLabel(_filterIndex).toLowerCase()} tasks'),
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 60),
+                  child: _EmptyState(
+                      message: _filterIndex == 0
+                          ? 'No tasks assigned yet'
+                          : 'No ${_tabLabel(_filterIndex).toLowerCase()} tasks'),
+                ),
               )
             else
               SliverPadding(
@@ -226,7 +227,6 @@ class _VolunteerMyTasksScreenState
               ),
           ],
         ),
-      ),
     );
   }
 

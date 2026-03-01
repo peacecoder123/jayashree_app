@@ -95,7 +95,7 @@ class _SuperAdminDashboardState extends State<SuperAdminDashboard> {
       ),
       body: IndexedStack(
         index: _selectedIndex,
-        children: tabs,
+        children: tabs.map((tab) => SizedBox.expand(child: tab)).toList(),
       ),
     );
   }

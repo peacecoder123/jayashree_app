@@ -96,7 +96,7 @@ class _VolunteerDashboardState extends State<VolunteerDashboard> {
       ),
       body: IndexedStack(
         index: _currentIndex,
-        children: _screens,
+        children: _screens.map((screen) => SizedBox.expand(child: screen)).toList(),
       ),
     );
   }

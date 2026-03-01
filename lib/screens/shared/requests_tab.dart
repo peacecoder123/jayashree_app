@@ -126,11 +126,14 @@ class _RequestsTabState extends State<RequestsTab> {
 
         // ── List ──────────────────────────────────────────────────────────────
         filtered.isEmpty
-            ? SliverFillRemaining(
-                child: Center(
-                  child: Text(
-                    'No requests found',
-                    style: GoogleFonts.poppins(color: AppColors.darkTextSecondary),
+            ? SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 60),
+                  child: Center(
+                    child: Text(
+                      'No requests found',
+                      style: GoogleFonts.poppins(color: AppColors.darkTextSecondary),
+                    ),
                   ),
                 ),
               )
