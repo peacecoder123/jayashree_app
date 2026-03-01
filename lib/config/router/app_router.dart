@@ -5,6 +5,8 @@ import '../../screens/public/landing_page.dart';
 import '../../screens/auth/login_screen.dart';
 import '../../screens/superadmin/superadmin_dashboard.dart';
 import '../../screens/admin/admin_dashboard.dart';
+import '../../screens/member/member_dashboard.dart';
+import '../../screens/volunteer/volunteer_dashboard.dart';
 
 // ─── Placeholder screens (replace with real screens as you build them) ───────
 class _Placeholder extends StatelessWidget {
@@ -26,6 +28,8 @@ class AppRoutes {
   static const String login = '/login';
   static const String superAdmin = '/superadmin';
   static const String admin = '/admin';
+  static const String member = '/member';
+  static const String volunteer = '/volunteer';
   static const String dashboard = '/dashboard';
   static const String tasks = '/tasks';
   static const String meetings = '/meetings';
@@ -59,12 +63,16 @@ GoRouter createRouter(AuthProvider authProvider) {
         // Redirect to role-specific dashboard
         if (authProvider.isSuperAdmin) return AppRoutes.superAdmin;
         if (authProvider.isAdmin) return AppRoutes.admin;
+        if (authProvider.isMember) return AppRoutes.member;
+        if (authProvider.isVolunteer) return AppRoutes.volunteer;
         return AppRoutes.dashboard;
       }
       if (isLoggedIn && location == AppRoutes.dashboard) {
         // Redirect from generic /dashboard to role-specific
         if (authProvider.isSuperAdmin) return AppRoutes.superAdmin;
         if (authProvider.isAdmin) return AppRoutes.admin;
+        if (authProvider.isMember) return AppRoutes.member;
+        if (authProvider.isVolunteer) return AppRoutes.volunteer;
       }
       return null;
     },
@@ -88,6 +96,16 @@ GoRouter createRouter(AuthProvider authProvider) {
         path: AppRoutes.admin,
         name: 'admin',
         builder: (context, state) => const AdminDashboard(),
+      ),
+      GoRoute(
+        path: AppRoutes.member,
+        name: 'member',
+        builder: (context, state) => const MemberDashboard(),
+      ),
+      GoRoute(
+        path: AppRoutes.volunteer,
+        name: 'volunteer',
+        builder: (context, state) => const VolunteerDashboard(),
       ),
       ShellRoute(
         builder: (context, state, child) => child,
