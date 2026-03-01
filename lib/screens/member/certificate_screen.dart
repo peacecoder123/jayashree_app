@@ -24,9 +24,8 @@ class MemberCertificateScreen extends StatelessWidget {
       ..sort(
           (a, b) => b.requestedDate.compareTo(a.requestedDate));
 
-    return Scaffold(
-      backgroundColor: AppColors.darkBackground,
-      body: CustomScrollView(
+    return SizedBox.expand(
+      child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
             child: Padding(
@@ -131,8 +130,11 @@ class MemberCertificateScreen extends StatelessWidget {
             ),
           ),
           if (myCerts.isEmpty)
-            SliverFillRemaining(
-              child: _EmptyCertState(),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 60),
+                child: _EmptyCertState(),
+              ),
             )
           else
             SliverPadding(

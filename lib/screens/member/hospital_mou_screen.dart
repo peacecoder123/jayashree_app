@@ -80,9 +80,8 @@ class MemberHospitalMouScreen extends StatelessWidget {
         data.mouRequests.where((m) => m.submittedById == userId).toList()
           ..sort((a, b) => b.submittedDate.compareTo(a.submittedDate));
 
-    return Scaffold(
-      backgroundColor: AppColors.darkBackground,
-      body: CustomScrollView(
+    return SizedBox.expand(
+      child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
             child: Padding(
@@ -188,8 +187,11 @@ class MemberHospitalMouScreen extends StatelessWidget {
             ),
           ),
           if (myMous.isEmpty)
-            const SliverFillRemaining(
-              child: _EmptyMouState(),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 60),
+                child: const _EmptyMouState(),
+              ),
             )
           else
             SliverPadding(
