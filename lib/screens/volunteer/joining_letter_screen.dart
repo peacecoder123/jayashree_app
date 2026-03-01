@@ -42,9 +42,8 @@ class VolunteerJoiningLetterScreen extends StatelessWidget {
       ..sort(
           (a, b) => b.requestedDate.compareTo(a.requestedDate));
 
-    return Scaffold(
-      backgroundColor: AppColors.darkBackground,
-      body: CustomScrollView(
+    return SizedBox.expand(
+      child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
             child: Padding(
@@ -154,8 +153,11 @@ class VolunteerJoiningLetterScreen extends StatelessWidget {
             ),
           ),
           if (myLetters.isEmpty)
-            SliverFillRemaining(
-              child: _EmptyLetterState(),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 60),
+                child: _EmptyLetterState(),
+              ),
             )
           else
             SliverPadding(

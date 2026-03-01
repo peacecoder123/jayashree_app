@@ -45,8 +45,9 @@ class _DonationsTabState extends State<DonationsTab> {
       return matchSearch && matchType;
     }).toList();
 
-    return CustomScrollView(
-      slivers: [
+    return SizedBox.expand(
+      child: CustomScrollView(
+        slivers: [
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -210,11 +211,14 @@ class _DonationsTabState extends State<DonationsTab> {
 
         // ── Donation List ─────────────────────────────────────────────────────
         filtered.isEmpty
-            ? SliverFillRemaining(
-                child: Center(
-                  child: Text(
-                    'No donations found',
-                    style: GoogleFonts.poppins(color: AppColors.darkTextSecondary),
+            ? SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 60),
+                  child: Center(
+                    child: Text(
+                      'No donations found',
+                      style: GoogleFonts.poppins(color: AppColors.darkTextSecondary),
+                    ),
                   ),
                 ),
               )
@@ -246,6 +250,7 @@ class _DonationsTabState extends State<DonationsTab> {
                 ),
               ),
       ],
+      ),
     );
   }
 
