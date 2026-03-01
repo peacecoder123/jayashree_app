@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 import '../../providers/auth_provider.dart';
 
 // ─── Placeholder screens (replace with real screens as you build them) ───────
@@ -35,11 +34,12 @@ class AppRoutes {
 }
 
 // ─── Router factory ──────────────────────────────────────────────────────────
-GoRouter createRouter(BuildContext context) {
-  final authProvider = Provider.of<AuthProvider>(context, listen: false);
-
+// Pass the AuthProvider directly so GoRouter's refreshListenable receives the
+// live ChangeNotifier instance and is notified on every auth state change.
+GoRouter createRouter(AuthProvider authProvider) {
   return GoRouter(
     initialLocation: AppRoutes.login,
+    refreshListenable: authProvider,
     redirect: (context, state) {
       final isLoggedIn = authProvider.isAuthenticated;
       final goingToLogin = state.matchedLocation == AppRoutes.login;
@@ -48,7 +48,6 @@ GoRouter createRouter(BuildContext context) {
       if (isLoggedIn && goingToLogin) return AppRoutes.dashboard;
       return null;
     },
-    refreshListenable: authProvider,
     routes: [
       GoRoute(
         path: AppRoutes.login,

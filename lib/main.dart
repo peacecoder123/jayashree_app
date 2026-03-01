@@ -19,10 +19,7 @@ class HopeConnectRoot extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => ThemeProvider()),
         ChangeNotifierProvider(create: (_) => AppDataProvider()),
-        ChangeNotifierProxyProvider<AppDataProvider, AuthProvider>(
-          create: (_) => AuthProvider(),
-          update: (_, __, auth) => auth!,
-        ),
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
       child: const HopeConnectApp(),
     );

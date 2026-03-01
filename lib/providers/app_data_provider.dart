@@ -618,7 +618,7 @@ class AppDataProvider extends ChangeNotifier {
         is80GEligible: true,
         receiptGenerated: true,
       ),
-      // Total ≈ ₹9,05,000
+      // Total ≈ ₹10,05,000
     ];
   }
 

@@ -6,22 +6,13 @@ import 'config/theme/light_theme.dart';
 import 'providers/theme_provider.dart';
 import 'providers/auth_provider.dart';
 
-class HopeConnectApp extends StatefulWidget {
+class HopeConnectApp extends StatelessWidget {
   const HopeConnectApp({super.key});
 
   @override
-  State<HopeConnectApp> createState() => _HopeConnectAppState();
-}
-
-class _HopeConnectAppState extends State<HopeConnectApp> {
-  late final _router = createRouter(context);
-
-  @override
   Widget build(BuildContext context) {
-    // Rebuild router when auth state changes
-    context.watch<AuthProvider>();
-
     final themeProvider = context.watch<ThemeProvider>();
+    final authProvider = context.watch<AuthProvider>();
 
     return MaterialApp.router(
       title: 'HopeConnect',
@@ -29,7 +20,7 @@ class _HopeConnectAppState extends State<HopeConnectApp> {
       theme: buildLightTheme(),
       darkTheme: buildDarkTheme(),
       themeMode: themeProvider.isDarkMode ? ThemeMode.dark : ThemeMode.light,
-      routerConfig: _router,
+      routerConfig: createRouter(authProvider),
     );
   }
 }
