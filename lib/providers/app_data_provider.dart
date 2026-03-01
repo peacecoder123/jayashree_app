@@ -218,7 +218,7 @@ class AppDataProvider extends ChangeNotifier {
       UserModel(
         id: 'u001',
         name: 'Rajesh Kumar',
-        email: 'superadmin@hopeconnect.org',
+        email: 'superadmin@jayshreefoundation.org',
         phone: '+91 98765 43210',
         location: 'Mumbai, Maharashtra',
         avatar: '',
@@ -231,7 +231,7 @@ class AppDataProvider extends ChangeNotifier {
       UserModel(
         id: 'u002',
         name: 'Priya Sharma',
-        email: 'admin@hopeconnect.org',
+        email: 'admin@jayshreefoundation.org',
         phone: '+91 97654 32109',
         location: 'Delhi, NCR',
         avatar: '',
@@ -243,7 +243,7 @@ class AppDataProvider extends ChangeNotifier {
       UserModel(
         id: 'u003',
         name: 'Vikram Nair',
-        email: 'vikram@hopeconnect.org',
+        email: 'vikram@jayshreefoundation.org',
         phone: '+91 96543 21098',
         location: 'Bengaluru, Karnataka',
         avatar: '',
@@ -256,7 +256,7 @@ class AppDataProvider extends ChangeNotifier {
       UserModel(
         id: 'u004',
         name: 'Dr. Anjali Mehta',
-        email: 'anjali@hopeconnect.org',
+        email: 'anjali@jayshreefoundation.org',
         phone: '+91 95432 10987',
         location: 'Chennai, Tamil Nadu',
         avatar: '',
@@ -268,7 +268,7 @@ class AppDataProvider extends ChangeNotifier {
       UserModel(
         id: 'u005',
         name: 'Suresh Patel',
-        email: 'suresh@hopeconnect.org',
+        email: 'suresh@jayshreefoundation.org',
         phone: '+91 94321 09876',
         location: 'Ahmedabad, Gujarat',
         avatar: '',
@@ -280,7 +280,7 @@ class AppDataProvider extends ChangeNotifier {
       UserModel(
         id: 'u006',
         name: 'Neha Singh',
-        email: 'neha@hopeconnect.org',
+        email: 'neha@jayshreefoundation.org',
         phone: '+91 93210 98765',
         location: 'Lucknow, Uttar Pradesh',
         avatar: '',
@@ -292,7 +292,7 @@ class AppDataProvider extends ChangeNotifier {
       UserModel(
         id: 'u007',
         name: 'Rohan Gupta',
-        email: 'rohan@hopeconnect.org',
+        email: 'rohan@jayshreefoundation.org',
         phone: '+91 92109 87654',
         location: 'Kolkata, West Bengal',
         avatar: '',
@@ -305,7 +305,7 @@ class AppDataProvider extends ChangeNotifier {
       UserModel(
         id: 'u008',
         name: 'Amit Verma',
-        email: 'amit@hopeconnect.org',
+        email: 'amit@jayshreefoundation.org',
         phone: '+91 91098 76543',
         location: 'Jaipur, Rajasthan',
         avatar: '',
@@ -317,7 +317,7 @@ class AppDataProvider extends ChangeNotifier {
       UserModel(
         id: 'u009',
         name: 'Kavya Reddy',
-        email: 'kavya@hopeconnect.org',
+        email: 'kavya@jayshreefoundation.org',
         phone: '+91 90987 65432',
         location: 'Hyderabad, Telangana',
         avatar: '',
@@ -329,7 +329,7 @@ class AppDataProvider extends ChangeNotifier {
       UserModel(
         id: 'u010',
         name: 'Arjun Singh',
-        email: 'arjun@hopeconnect.org',
+        email: 'arjun@jayshreefoundation.org',
         phone: '+91 89876 54321',
         location: 'Chandigarh, Punjab',
         avatar: '',
@@ -341,7 +341,7 @@ class AppDataProvider extends ChangeNotifier {
       UserModel(
         id: 'u011',
         name: 'Pooja Sharma',
-        email: 'pooja@hopeconnect.org',
+        email: 'pooja@jayshreefoundation.org',
         phone: '+91 88765 43210',
         location: 'Pune, Maharashtra',
         avatar: '',
@@ -353,7 +353,7 @@ class AppDataProvider extends ChangeNotifier {
       UserModel(
         id: 'u012',
         name: 'Deepak Kumar',
-        email: 'deepak@hopeconnect.org',
+        email: 'deepak@jayshreefoundation.org',
         phone: '+91 87654 32109',
         location: 'Patna, Bihar',
         avatar: '',
@@ -423,7 +423,7 @@ class AppDataProvider extends ChangeNotifier {
         id: 't005',
         title: 'Social Media Content for Diwali Drive',
         description:
-            'Create 10 social media posts (Instagram + Facebook) for the Diwali gift distribution drive. Use HopeConnect branding guidelines.',
+            'Create 10 social media posts (Instagram + Facebook) for the Diwali gift distribution drive. Use Jayshree Foundation branding guidelines.',
         assignedToId: 'u009',
         assignedById: 'u002',
         deadline: now.add(const Duration(days: 5)),
@@ -768,14 +768,14 @@ class AppDataProvider extends ChangeNotifier {
         name: 'NGO Registration Certificate',
         category: 'LEGAL',
         iconColor: 'purple',
-        fileUrl: 'https://hopeconnect.org/docs/ngo_registration.pdf',
+        fileUrl: 'https://jayshreefoundation.org/docs/ngo_registration.pdf',
       ),
       DocumentModel(
         id: 'doc002',
         name: 'FCRA Registration Certificate',
         category: 'LEGAL',
         iconColor: 'purple',
-        fileUrl: 'https://hopeconnect.org/docs/fcra_certificate.pdf',
+        fileUrl: 'https://jayshreefoundation.org/docs/fcra_certificate.pdf',
       ),
       // TAX
       DocumentModel(
@@ -783,14 +783,14 @@ class AppDataProvider extends ChangeNotifier {
         name: '12A Tax Exemption Certificate',
         category: 'TAX',
         iconColor: 'orange',
-        fileUrl: 'https://hopeconnect.org/docs/12a_certificate.pdf',
+        fileUrl: 'https://jayshreefoundation.org/docs/12a_certificate.pdf',
       ),
       DocumentModel(
         id: 'doc004',
         name: '80G Certificate',
         category: 'TAX',
         iconColor: 'orange',
-        fileUrl: 'https://hopeconnect.org/docs/80g_certificate.pdf',
+        fileUrl: 'https://jayshreefoundation.org/docs/80g_certificate.pdf',
       ),
       // REPORTS
       DocumentModel(
@@ -798,7 +798,7 @@ class AppDataProvider extends ChangeNotifier {
         name: 'Annual Report 2023-24',
         category: 'REPORTS',
         iconColor: 'teal',
-        fileUrl: 'https://hopeconnect.org/docs/annual_report_2324.pdf',
+        fileUrl: 'https://jayshreefoundation.org/docs/annual_report_2324.pdf',
       ),
       // FINANCIAL
       DocumentModel(
@@ -806,7 +806,7 @@ class AppDataProvider extends ChangeNotifier {
         name: 'Audited Financial Statements FY 2023-24',
         category: 'FINANCIAL',
         iconColor: 'blue',
-        fileUrl: 'https://hopeconnect.org/docs/audited_statements_2324.pdf',
+        fileUrl: 'https://jayshreefoundation.org/docs/audited_statements_2324.pdf',
       ),
       DocumentModel(
         id: 'doc007',
@@ -820,7 +820,7 @@ class AppDataProvider extends ChangeNotifier {
         name: 'Board Resolution – March 2025',
         category: 'GOVERNANCE',
         iconColor: 'red',
-        fileUrl: 'https://hopeconnect.org/docs/board_resolution_mar25.pdf',
+        fileUrl: 'https://jayshreefoundation.org/docs/board_resolution_mar25.pdf',
       ),
     ];
   }

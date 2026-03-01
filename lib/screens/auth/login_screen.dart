@@ -63,15 +63,19 @@ class _LoginScreenState extends State<LoginScreen>
       final role = authProvider.currentUser?.role;
       switch (role) {
         case UserRole.superAdmin:
+          context.go(AppRoutes.superAdmin);
+          break;
         case UserRole.admin:
-          context.go(AppRoutes.dashboard);
+          context.go(AppRoutes.admin);
           break;
         case UserRole.member:
+          context.go(AppRoutes.member);
+          break;
         case UserRole.volunteer:
-          context.go(AppRoutes.dashboard);
+          context.go(AppRoutes.volunteer);
           break;
         default:
-          context.go(AppRoutes.dashboard);
+          context.go(AppRoutes.login);
       }
     }
   }
@@ -81,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen>
     final authProvider = context.watch<AuthProvider>();
 
     return Scaffold(
-      backgroundColor: AppColors.darkBackground,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SingleChildScrollView(
         child: ConstrainedBox(
           constraints: BoxConstraints(
@@ -134,7 +138,7 @@ class _LoginScreenState extends State<LoginScreen>
         ),
         const SizedBox(height: 16),
         Text(
-          'HopeConnect',
+          'Jayshree Foundation',
           style: GoogleFonts.poppins(
             color: AppColors.primaryTeal,
             fontSize: 28,
@@ -379,10 +383,10 @@ class _LoginScreenState extends State<LoginScreen>
   // ─── Demo Credentials ─────────────────────────────────────────────────────
   Widget _buildDemoCredentials() {
     final creds = [
-      _CredInfo('SuperAdmin', 'superadmin@hopeconnect.org', AppColors.secondaryPurple),
-      _CredInfo('Admin', 'admin@hopeconnect.org', AppColors.secondaryBlue),
-      _CredInfo('Member', 'anjali@hopeconnect.org', AppColors.primaryTeal),
-      _CredInfo('Volunteer', 'amit@hopeconnect.org', const Color(0xFF43A047)),
+      _CredInfo('SuperAdmin', 'superadmin@jayshreefoundation.org', AppColors.secondaryPurple),
+      _CredInfo('Admin', 'admin@jayshreefoundation.org', AppColors.secondaryBlue),
+      _CredInfo('Member', 'anjali@jayshreefoundation.org', AppColors.primaryTeal),
+      _CredInfo('Volunteer', 'amit@jayshreefoundation.org', const Color(0xFF43A047)),
     ];
 
     return Container(

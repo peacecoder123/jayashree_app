@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:hopeconnect/config/theme/app_colors.dart';
-import 'package:hopeconnect/core/enums/status.dart';
-import 'package:hopeconnect/providers/app_data_provider.dart';
-import 'package:hopeconnect/providers/auth_provider.dart';
-import 'package:hopeconnect/providers/theme_provider.dart';
-import 'package:hopeconnect/screens/shared/donations_tab.dart';
-import 'package:hopeconnect/screens/shared/documentation_tab.dart';
-import 'package:hopeconnect/screens/shared/joining_letters_tab.dart';
-import 'package:hopeconnect/screens/shared/members_tab.dart';
-import 'package:hopeconnect/screens/shared/overview_tab.dart';
-import 'package:hopeconnect/screens/shared/requests_tab.dart';
-import 'package:hopeconnect/screens/shared/volunteers_tab.dart';
-import 'package:hopeconnect/widgets/common/app_sidebar.dart';
-import 'package:hopeconnect/widgets/common/custom_app_bar.dart';
+import 'package:jayshree_foundation/config/theme/app_colors.dart';
+import 'package:jayshree_foundation/core/enums/status.dart';
+import 'package:jayshree_foundation/providers/app_data_provider.dart';
+import 'package:jayshree_foundation/providers/auth_provider.dart';
+import 'package:jayshree_foundation/providers/theme_provider.dart';
+import 'package:jayshree_foundation/screens/shared/donations_tab.dart';
+import 'package:jayshree_foundation/screens/shared/documentation_tab.dart';
+import 'package:jayshree_foundation/screens/shared/joining_letters_tab.dart';
+import 'package:jayshree_foundation/screens/shared/members_tab.dart';
+import 'package:jayshree_foundation/screens/shared/overview_tab.dart';
+import 'package:jayshree_foundation/screens/shared/requests_tab.dart';
+import 'package:jayshree_foundation/screens/shared/volunteers_tab.dart';
+import 'package:jayshree_foundation/widgets/common/app_sidebar.dart';
+import 'package:jayshree_foundation/widgets/common/custom_app_bar.dart';
 
 class SuperAdminDashboard extends StatefulWidget {
   const SuperAdminDashboard({super.key});
@@ -72,14 +72,19 @@ class _SuperAdminDashboardState extends State<SuperAdminDashboard> {
     ];
 
     return Scaffold(
-      backgroundColor: AppColors.darkBackground,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: CustomAppBar(
         title: _navItems[_selectedIndex].$2,
         user: user,
         notificationCount: pendingTotal,
         onThemeTap: () => theme.toggleTheme(),
         onNotificationTap: () => setState(() => _selectedIndex = 6),
-        onSettingsTap: () {},
+        onSettingsTap: () {
+          // TODO: implement settings screen
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Settings coming soon')),
+          );
+        },
       ),
       drawer: AppSidebar(
         items: sidebarItems,

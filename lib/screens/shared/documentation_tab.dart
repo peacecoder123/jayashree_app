@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import 'package:hopeconnect/config/theme/app_colors.dart';
-import 'package:hopeconnect/models/document_model.dart';
-import 'package:hopeconnect/providers/app_data_provider.dart';
+import 'package:jayshree_foundation/config/theme/app_colors.dart';
+import 'package:jayshree_foundation/models/document_model.dart';
+import 'package:jayshree_foundation/providers/app_data_provider.dart';
 
 class DocumentationTab extends StatefulWidget {
   const DocumentationTab({super.key});

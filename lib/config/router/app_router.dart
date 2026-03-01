@@ -8,18 +8,6 @@ import '../../screens/admin/admin_dashboard.dart';
 import '../../screens/member/member_dashboard.dart';
 import '../../screens/volunteer/volunteer_dashboard.dart';
 
-// ─── Placeholder screens (replace with real screens as you build them) ───────
-class _Placeholder extends StatelessWidget {
-  final String title;
-  const _Placeholder(this.title);
-
-  @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: Text(title)),
-        body: Center(child: Text(title, style: Theme.of(context).textTheme.headlineSmall)),
-      );
-}
-
 // ─── Route names ─────────────────────────────────────────────────────────────
 class AppRoutes {
   AppRoutes._();
@@ -65,7 +53,14 @@ GoRouter createRouter(AuthProvider authProvider) {
         if (authProvider.isAdmin) return AppRoutes.admin;
         if (authProvider.isMember) return AppRoutes.member;
         if (authProvider.isVolunteer) return AppRoutes.volunteer;
-        return AppRoutes.dashboard;
+        return AppRoutes.login;
+      }
+      if (isLoggedIn && location == AppRoutes.landing) {
+        // Redirect authenticated users from landing page to their dashboard
+        if (authProvider.isSuperAdmin) return AppRoutes.superAdmin;
+        if (authProvider.isAdmin) return AppRoutes.admin;
+        if (authProvider.isMember) return AppRoutes.member;
+        if (authProvider.isVolunteer) return AppRoutes.volunteer;
       }
       if (isLoggedIn && location == AppRoutes.dashboard) {
         // Redirect from generic /dashboard to role-specific
@@ -107,71 +102,6 @@ GoRouter createRouter(AuthProvider authProvider) {
         name: 'volunteer',
         builder: (context, state) => const VolunteerDashboard(),
       ),
-      ShellRoute(
-        builder: (context, state, child) => child,
-        routes: [
-          GoRoute(
-            path: AppRoutes.dashboard,
-            name: 'dashboard',
-            builder: (context, state) => const _Placeholder('Dashboard'),
-          ),
-          GoRoute(
-            path: AppRoutes.tasks,
-            name: 'tasks',
-            builder: (context, state) => const _Placeholder('Tasks'),
-          ),
-          GoRoute(
-            path: AppRoutes.meetings,
-            name: 'meetings',
-            builder: (context, state) => const _Placeholder('Meetings'),
-          ),
-          GoRoute(
-            path: AppRoutes.donations,
-            name: 'donations',
-            builder: (context, state) => const _Placeholder('Donations'),
-          ),
-          GoRoute(
-            path: AppRoutes.mou,
-            name: 'mou',
-            builder: (context, state) => const _Placeholder('MOU Requests'),
-          ),
-          GoRoute(
-            path: AppRoutes.certificates,
-            name: 'certificates',
-            builder: (context, state) => const _Placeholder('Certificates'),
-          ),
-          GoRoute(
-            path: AppRoutes.documents,
-            name: 'documents',
-            builder: (context, state) => const _Placeholder('Documents'),
-          ),
-          GoRoute(
-            path: AppRoutes.members,
-            name: 'members',
-            builder: (context, state) => const _Placeholder('Members'),
-          ),
-          GoRoute(
-            path: AppRoutes.volunteers,
-            name: 'volunteers',
-            builder: (context, state) => const _Placeholder('Volunteers'),
-          ),
-          GoRoute(
-            path: AppRoutes.profile,
-            name: 'profile',
-            builder: (context, state) => const _Placeholder('Profile'),
-          ),
-          GoRoute(
-            path: AppRoutes.settings,
-            name: 'settings',
-            builder: (context, state) => const _Placeholder('Settings'),
-          ),
-          GoRoute(
-            path: AppRoutes.joiningLetters,
-            name: 'joiningLetters',
-            builder: (context, state) => const _Placeholder('Joining Letters'),
-          ),
-        ],
-      ),
     ],
     errorBuilder: (context, state) => Scaffold(
       body: Center(
@@ -183,8 +113,8 @@ GoRouter createRouter(AuthProvider authProvider) {
             Text('Page not found', style: Theme.of(context).textTheme.headlineSmall),
             const SizedBox(height: 8),
             TextButton(
-              onPressed: () => context.go(AppRoutes.dashboard),
-              child: const Text('Go to Dashboard'),
+              onPressed: () => context.go(AppRoutes.landing),
+              child: const Text('Go Home'),
             ),
           ],
         ),

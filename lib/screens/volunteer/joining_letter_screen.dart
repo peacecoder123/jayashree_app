@@ -133,7 +133,7 @@ class VolunteerJoiningLetterScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          'A monthly joining letter confirming your volunteer tenure at HopeConnect. This document can be used for personal records, resume building, and other official purposes.',
+                          'A monthly joining letter confirming your volunteer tenure at Jayshree Foundation. This document can be used for personal records, resume building, and other official purposes.',
                           style: GoogleFonts.poppins(
                               color: AppColors.darkTextSecondary,
                               fontSize: 12,

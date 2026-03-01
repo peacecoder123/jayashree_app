@@ -3,13 +3,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-import 'package:hopeconnect/config/theme/app_colors.dart';
-import 'package:hopeconnect/core/enums/status.dart';
-import 'package:hopeconnect/models/donation_model.dart';
-import 'package:hopeconnect/providers/app_data_provider.dart';
-import 'package:hopeconnect/widgets/charts/donation_trend_chart.dart';
-import 'package:hopeconnect/widgets/charts/task_status_chart.dart';
-import 'package:hopeconnect/widgets/common/stat_card.dart';
+import 'package:jayshree_foundation/config/theme/app_colors.dart';
+import 'package:jayshree_foundation/core/enums/status.dart';
+import 'package:jayshree_foundation/models/donation_model.dart';
+import 'package:jayshree_foundation/providers/app_data_provider.dart';
+import 'package:jayshree_foundation/widgets/charts/donation_trend_chart.dart';
+import 'package:jayshree_foundation/widgets/charts/task_status_chart.dart';
+import 'package:jayshree_foundation/widgets/common/stat_card.dart';
 
 class OverviewTab extends StatelessWidget {
   final bool isSuperAdmin;
@@ -42,7 +42,7 @@ class OverviewTab extends StatelessWidget {
         children: [
           // ── Header ─────────────────────────────────────────────────────────
           Text(
-            isSuperAdmin ? 'Super Admin Dashboard - HopeConnect NGO' : 'Admin Dashboard - HopeConnect NGO',
+            isSuperAdmin ? 'Super Admin Dashboard - Jayshree Foundation NGO' : 'Admin Dashboard - Jayshree Foundation NGO',
             style: GoogleFonts.poppins(
               color: Colors.white,
               fontSize: 20,
@@ -178,7 +178,7 @@ class _HeroBanner extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'HopeConnect NGO',
+                    'Jayshree Foundation NGO',
                     style: GoogleFonts.poppins(
                       color: Colors.white,
                       fontSize: 16,

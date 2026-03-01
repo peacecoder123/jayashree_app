@@ -3,13 +3,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-import 'package:hopeconnect/config/theme/app_colors.dart';
-import 'package:hopeconnect/core/enums/status.dart';
-import 'package:hopeconnect/core/enums/user_role.dart';
-import 'package:hopeconnect/models/joining_letter_model.dart';
-import 'package:hopeconnect/providers/app_data_provider.dart';
-import 'package:hopeconnect/providers/auth_provider.dart';
-import 'package:hopeconnect/widgets/common/status_badge.dart';
+import 'package:jayshree_foundation/config/theme/app_colors.dart';
+import 'package:jayshree_foundation/core/enums/status.dart';
+import 'package:jayshree_foundation/core/enums/user_role.dart';
+import 'package:jayshree_foundation/models/joining_letter_model.dart';
+import 'package:jayshree_foundation/providers/app_data_provider.dart';
+import 'package:jayshree_foundation/providers/auth_provider.dart';
+import 'package:jayshree_foundation/widgets/common/status_badge.dart';
 
 class JoiningLettersTab extends StatefulWidget {
   const JoiningLettersTab({super.key});

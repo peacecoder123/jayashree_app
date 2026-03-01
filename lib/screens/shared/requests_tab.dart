@@ -3,10 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-import 'package:hopeconnect/config/theme/app_colors.dart';
-import 'package:hopeconnect/core/enums/status.dart';
-import 'package:hopeconnect/providers/app_data_provider.dart';
-import 'package:hopeconnect/widgets/common/status_badge.dart';
+import 'package:jayshree_foundation/config/theme/app_colors.dart';
+import 'package:jayshree_foundation/core/enums/status.dart';
+import 'package:jayshree_foundation/providers/app_data_provider.dart';
+import 'package:jayshree_foundation/widgets/common/status_badge.dart';
 
 // Unified request item model
 class _RequestItem {
